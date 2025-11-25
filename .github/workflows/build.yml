@@ -34,4 +34,13 @@ jobs:
       run: |
         cd publish
         zip -r ../dotnet-app.zip .
+          
+    - name: Upload ZIP Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: dotnet-app-build
+        path: dotnet-app.zip
+        retention-days: 30
+     
+    
     
